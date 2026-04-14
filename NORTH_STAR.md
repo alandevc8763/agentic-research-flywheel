@@ -59,7 +59,7 @@ $\text{Stable Sync} \rightarrow \text{Precise Distillation} \rightarrow \text{Re
 
 | Epoch | Milestone | Status | Verification |
 | :--- | :--- | :--- | :--- |
-| **1** | Precision Librarian | 🏗️ In Progress | $\\text{SNR} \\ge 90\\%$ (Cycles: FutureWeaver, AgenticObservability Integrated) |
+| **1** | Precision Librarian | 🏗️ In Progress | $\\text{SNR} \\ge 90\\%$ (Cycles: FutureWeaver, AgenticObservability, LACP Foundation Integrated) |
 | **2** | Synthetic Analyst | ⏳ Pending | $\text{Synthesis Rate} > 0$ |
 | **3** | Predictive Visionary | ⏳ Pending | $\text{Prediction Accuracy} > 50\%$ |
 | **4** | Integrated Architect | ⏳ Pending | $\text{Autonomous Skill Creation}$ |
