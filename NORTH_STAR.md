@@ -13,39 +13,39 @@ It is the transition from **$\text{Passive Storage} \rightarrow \text{Active Cur
 
 ### Epoch 1: The Precision Librarian (The Era of Signal)
 **Focus**: $\text{Maximizing SNR (Signal-to-Noise Ratio)}$
-- **Goal**: Perfect the "Distillation Protocol" to ensure that every single entry in the Second Brain is of "gold" quality.
-- **Key Capabilities**:
+|- **Goal**: Perfect the "Distillation Protocol" to ensure that every single entry in the Second Brain is of "gold" quality.
+|- **Key Capabilities**:
   - $\text{Critique Loop}$: Implementing a "Critic Agent" to challenge and refine distilled knowledge before it is synced.
   - $\text{Automated Verification}$: Cross-referencing findings across $\ge 3$ independent high-authority sources.
   - $\text{Precision Sync}$: Atomic updates to the Knowledge Graph without duplication.
-- **Success Metric**: $\text{Integration Rate} > 90\%$ (Almost every discovery is found useful).
+|- **Success Metric**: $\text{Integration Rate} > 90\%$ (Almost every discovery is found useful).
 
 ### Epoch 2: The Synthetic Analyst (The Era of Connection)
 **Focus**: $\text{Knowledge Synthesis \& Cross-Pollination}$
-- **Goal**: Move beyond individual entities to **Relational Intelligence**. The system should "connect the dots" between disparate domains.
-- **Key Capabilities**:
+|- **Goal**: Move beyond individual entities to **Relational Intelligence**. The system should "connect the dots" between disparate domains.
+|- **Key Capabilities**:
   - $\text{Cross-Pollination Trigger}$: Automatically triggering research when two unrelated entities in the Second Brain show a potential latent connection.
   - $\text{Hypothesis Generation}$: Generating a "Research Hypothesis" (e.g., "Could the principles of X be applied to solve the bottleneck in Y?").
   - $\text{Synthesis Reports}$: Producing high-level summaries that merge multiple research trajectories into a new conceptual framework.
-- **Success Metric**: $\text{Synthesis Rate}$ (Number of new relationships discovered per 100 entities).
+|- **Success Metric**: $\text{Synthesis Rate}$ (Number of new relationships discovered per 100 entities).
 
 ### Epoch 3: The Predictive Visionary (The Era of Foresight)
 **Focus**: $\text{Trend Forecasting \& Frontier Prediction}$
-- **Goal**: Shift from "Reactive Research" to "Proactive Anticipation."
-- **Key Capabilities**:
+|- **Goal**: Shift from "Reactive Research" to "Proactive Anticipation."
+|- **Key Capabilities**:
   - $\text{Velocity Analysis}$: Monitoring the rate of change in specific technical clusters to predict the "next big thing" before it hits the mainstream.
   - $\text{Pre-emptive Mapping}$: Building the knowledge infrastructure for a predicted trend *before* it fully emerges.
   - $\text{Frontier Scanning}$: Autonomous identification of "Weak Signals" in niche forums, pre-prints, and obscure repositories.
-- **Success Metric**: $\text{Lead Time}$ (Time difference between Flywheel prediction and mainstream adoption).
+|- **Success Metric**: $\text{Lead Time}$ (Time difference between Flywheel prediction and mainstream adoption).
 
 ### Epoch 4: The Integrated Architect (The Era of Self-Evolution)
 **Focus**: $\text{Closing the Loop between Knowledge and Agency}$
-- **Goal**: Full integration with the **LACP (Local Agent Control Plane)**. The Flywheel becomes the "Cerebral Cortex" of the agent.
-- **Key Capabilities**:
+|- **Goal**: Full integration with the **LACP (Local Agent Control Plane)**. The Flywheel becomes the "Cerebral Cortex" of the agent.
+|- **Key Capabilities**:
   - $\text{Skill Auto-Synthesis}$: Automatically converting a discovered "Technical Pattern" into an executable "Agent Skill".
   - $\text{Self-Updating Core}$: The system modifies its own `SOPs` and `Prompt-Templates` based on the research it has conducted.
   - $\text{Recursive Improvement}$: The Flywheel researches "how to be a better Flywheel" and implements the improvements autonomously.
-- **Success Metric**: $\text{Evolution Velocity}$ (The rate at which the system's own capabilities improve without human intervention).
+|- **Success Metric**: $\text{Evolution Velocity}$ (The rate at which the system's own capabilities improve without human intervention).
 
 ---
 
@@ -59,7 +59,7 @@ $\text{Stable Sync} \rightarrow \text{Precise Distillation} \rightarrow \text{Re
 
 | Epoch | Milestone | Status | Verification |
 | :--- | :--- | :--- | :--- |
-| **1** | Precision Librarian | 🏗️ In Progress | $\\text{SNR} \\ge 90\\%$ (Cycles: FutureWeaver, AgenticObservability, LACP Foundation Integrated) |
+| **1** | Precision Librarian | 🏗️ In Progress | $\text{SNR} \ge 90\%$ (Cycles: FutureWeaver, AgenticObservability, LACP Foundation Integrated, Agent-Native OS) |
 | **2** | Synthetic Analyst | ⏳ Pending | $\text{Synthesis Rate} > 0$ |
 | **3** | Predictive Visionary | ⏳ Pending | $\text{Prediction Accuracy} > 50\%$ |
 | **4** | Integrated Architect | ⏳ Pending | $\text{Autonomous Skill Creation}$ |
