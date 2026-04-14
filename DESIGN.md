@@ -1,56 +1,71 @@
-# Project: Agentic Research Flywheel
+# Technical Specification: Agentic Research Flywheel
 
-## 1. Vision
-To transform AI research from a manual, episodic task into a continuous, autonomous, and self-evolving loop that feeds a high-fidelity "Second Brain".
+## 1. System Philosophy
+The Flywheel is based on the principle of **"Closed-Loop Intelligence"**. It assumes that knowledge is not a destination but a dynamic frontier. The system's primary goal is to maintain the **maximal signal-to-noise ratio** ($\text{SNR}$) of the Second Brain while ensuring **continuous expansion**.
 
-## 2. Architecture
-The system consists of four primary modules:
+---
 
-### A. Gap Detector (The "Senses")
-- **Input**: Current Knowledge Graph / `curated_resources.md`.
-- **Process**: Semantic analysis to identify "knowledge voids" or outdated entries.
-- **Output**: A set of `ResearchTarget` objects (Query, Context, Priority).
+## 2. Detailed Architectural Flow
 
-### B. Deep-Dive Agent (The "Hunter")
-- **Input**: `ResearchTarget`.
-- **Process**: 
-  - Multi-step web research.
-  - Vision-guided scraping of technical documentation.
-  - Cross-referencing multiple sources.
-- **Output**: Raw `DiscoveryDataset` (Links, Snippets, Metadata).
+### 2.1 Data Pipeline ($\text{DP}$)
+The data flow is defined as a series of transformations:
+$$\text{KnowledgeVoid} \xrightarrow{\text{ResearchAgent}} \text{DiscoveryDataset} \xrightarrow{\text{Distiller}} \text{KnowledgeArtifact} \xrightarrow{\text{SyncManager}} \text{KnowledgeGraph}$$
 
-### C. Distillation Engine (The "Alchemist")
-- **Input**: `DiscoveryDataset`.
-- **Process**: 
-  - Noise filtering.
-  - Mapping to LLM-Wiki schema (Entity $\rightarrow$ Relation $\rightarrow$ Attribute).
-  - Formatting for Markdown/MkDocs.
-- **Output**: `KnowledgeArtifact` (Structured Markdown).
+### 2.2 Module Deep-Dive
 
-### D. Sync Manager (The "Librarian")
-- **Input**: `KnowledgeArtifact`.
-- **Process**: 
-  - Local file update in `~/ai-second-brain`.
-  - Git commit and push to `awesome-ai-discoveries`.
-- **Output**: Updated public and private knowledge bases.
+#### A. Gap Detector (The Sensing Layer)
+**Objective**: Transform a static knowledge base into a set of active research targets.
+- **Detection Logic**:
+  - **Semantic Void Analysis**: Using embeddings to find "white spaces" in the latent space of the current knowledge base.
+  - **Dependency Mapping**: Identifying concepts that are referenced but not defined (e.g., a mention of "LACP" without a detailed architecture entry).
+  - **Freshness Check**: Using timestamps to identify resources that may have evolved (e.g., new LLM model releases).
+- **Output**: `ResearchTarget` $\rightarrow$ `{query: str, context: str, priority: float, reason: str}`.
 
-## 3. Implementation Roadmap
+#### B. Deep-Dive Agent (The Acquisition Layer)
+**Objective**: Maximize the recall of high-signal information.
+- **Strategy**:
+  - **Breadth-First Search**: Initial scan for top-tier resources.
+  - **Depth-First Extraction**: Deep-diving into specific documentation, codebases, or papers.
+  - **Cross-Reference Validation**: If Source A and Source B agree on a technical detail, it is promoted to "High Confidence".
+- **Output**: `DiscoveryDataset` $\rightarrow$ `{raw_text: list, urls: list, metadata: dict}`.
 
-### Phase 1: MVP (The Linear Pipe)
-- [ ] Implement basic `Search $\rightarrow$ Format $\rightarrow$ Push` pipeline.
-- [ ] Create a standard "Discovery Template" for curated resources.
-- [ ] Verify end-to-end flow from a single trigger to GitHub.
+#### C. Distillation Engine (The Refinement Layer)
+**Objective**: Transform raw data into structured wisdom.
+- **The Distillation Protocol**:
+  1. **De-noising**: Remove marketing adjectives, redundant introductions, and boilerplate.
+  2. **Entity Extraction**: Identify core concepts, their attributes, and their relationships.
+  3. **Utility Scoring**: Evaluate the finding based on:
+     - $\text{Actionability}$: Can this be implemented or used?
+     - $\text{Architectural Depth}$: Does it explain the "why" or just the "what"?
+     - $\text{Novelty}$: Does it provide a new perspective?
+  4. **Formatting**: Apply a rigid Markdown template for consistent integration.
+- **Output**: `KnowledgeArtifact` $\rightarrow$ `{title: str, content: str, tags: list, sources: list}`.
 
-### Phase 2: Cognitive (The Gap Detector)
-- [ ] Integrate with `Second Brain` graph to detect missing topics.
-- [ ] Implement automated query generation based on knowledge gaps.
+#### D. Sync Manager (The Integration Layer)
+**Objective**: Ensure atomic and consistent updates to the knowledge base.
+- **Collision Detection**: Checking if the new artifact overlaps with existing entries.
+- **Merging Logic**: If overlap exists, the system performs a `merge` rather than an `overwrite`, synthesizing the two perspectives.
+- **Distribution**: 
+  - $\text{Local}$ $\rightarrow$ `~/ai-second-brain` (Full fidelity).
+  - $\text{Remote}$ $\rightarrow$ `awesome-ai-discoveries` (Curated, public version).
 
-### Phase 3: Evolutionary (The Feedback Loop)
-- [ ] Implement trajectory logging for research runs.
-- [ ] Create a feedback mechanism where user ratings refine search strategies.
-- [ ] Autonomous refinement of "Distillation" prompts.
+---
 
-## 4. Success Metrics
-- **Signal-to-Noise Ratio**: Percentage of discovered resources that are actually integrated into the Second Brain.
-- **Knowledge Growth Rate**: Number of new, high-value entities added to the graph per week.
-- **Autonomy Level**: Ratio of autonomous discoveries vs. user-triggered research.
+## 3. Feedback Loops (The "Flywheel" Effect)
+The system is not a linear pipe but a circle:
+1. **Update Loop**: Sync $\rightarrow$ Knowledge Graph $\rightarrow$ Gap Detector. (New knowledge creates new gaps).
+2. **Refinement Loop**: User Feedback $\rightarrow$ Distillation Prompt $\rightarrow$ Better Artifacts.
+3. **Strategy Loop**: Success Metric $\rightarrow$ Research Strategy $\rightarrow$ Better Discovery.
+
+---
+
+## 4. Success Metrics ($\text{KPIs}$)
+- **Signal Density**: $\frac{\text{Integrated Tokens}}{\text{Processed Tokens}}$.
+- **Frontier Expansion**: Number of new unique entities added to the Knowledge Graph per cycle.
+- **Autonomous Efficiency**: Time taken from Gap Detection to Sync without human intervention.
+
+---
+
+## 5. Future Expansion
+- **Multi-Agent Debate**: Implementing a "Critic Agent" to challenge the distillation results before they are synced.
+- **Real-time Triggering**: Integrating with RSS feeds or GitHub Webhooks to trigger the flywheel instantly upon a new discovery.
