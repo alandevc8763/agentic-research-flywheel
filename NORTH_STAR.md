@@ -13,6 +13,7 @@ To evolve from a passive repository of information into an autonomous, self-corr
 | :--- | :---: | :---: | :---: | :--- |
 | Multi-Agent Critique Loops for Knowledge Verification | ✅ | High | Integrated | Implemented via DAR & MAD-M$^2$ patterns. |
 | Structural KV Cache Compression | ✅ | High | Integrated | Implemented via CodeComp (CPG-priors) |
+| Compute-Optimal Test-Time Scaling | ✅ | High | Integrated | Implemented via TTS-Scaling/PRM logic. |
 
 ----
 
