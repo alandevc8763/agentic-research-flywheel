@@ -1,0 +1,11 @@
+### 🌀 [Agentic Memory Architectures: Temporal Tool-Memory Graphs (TTMG)](https://arxiv.org/abs/2604.11544)
+**$\text{Taxonomy}$**: $\text{Agentic Cognition}$ | $\text{Memory \& State Management}$ | **$\text{Signal}$**: Gold $\text{💎}$
+
+- **$\text{Core Insight}$**: Long-horizon agentic state management is limited by the tension between **persistence** (preserving core truths) and **volatility** (adapting to evolving environments). The optimal architecture is a **Temporal Tool-Memory Graph (TTMG)** that decouples temporal validity from data deletion using **Continuous Phase Rotation (CPR)**. By mapping relations to a volatility-based rotation speed ($\text{volatility}(r)$), the system achieves "Geometric Shadowing," where obsolete facts naturally rotate out of phase, allowing temporally aligned truths to dominate retrieval without explicit pruning. When coupled with **Tool Graph Memory (SEARL)**, these trajectories are abstracted into policy-execution maps, transforming sparse episodic experiences into dense, reusable architectural patterns.
+
+- **$\text{Geek Note}$**: 
+  - **$\text{CPR Logic}$**: Instead of $\text{timestamp-based filtering}$ (which requires expensive LLM reasoning for every query), RoMem uses complex vector space rotations. The phase $\theta(t) = \theta_0 + \omega \cdot t$, where $\omega$ is determined by the **Semantic Speed Gate**.
+  - **$\text{Geometric Shadowing}$**: $\text{dist}(\text{fact}_1, \text{fact}_2)$ increases as their phases diverge, meaning a "president of" relation rotates faster than a "born in" relation, ensuring the most current "president" is always the closest vector.
+  - **$\text{SEARL Integration}$**: While RoMem manages the *truth value* of the graph, SEARL manages the *utility value* by correlating trajectories to densify reward signals $\mathcal{R}$.
+
+- **$\text{Synergy}$**: Directly extends the **Trace-to-Signal Conversion** loop by providing the structural destination for distilled nuggets. It enables the "Sensing" phase of the Flywheel to operate over a temporally-aware memory, reducing hallucinations caused by outdated state (e.g., using a deprecated API version) and facilitating the transition to **Epoch 4: Skill Auto-Synthesis**.
