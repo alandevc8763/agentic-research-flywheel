@@ -1,31 +1,66 @@
-### 🔍 $\mathcal{D}_{A2A}$: The Agentic Discovery and Semantic Matchmaking Framework
+# 🧠 Agent-Native OS: Cognitive Resource Orchestration
 
-**Category**: Agentic Economy / A2A Protocols  
-**Tags**: `a2a-discovery`, `semantic-matchmaking`, `agent-registry`, `game-theory`, `discovery-protocols`  
-**Source**: Synthesized Research via Flywheel Cycle (Agentic Research Flywheel, 2026)
+## 1. Abstract $\mathcal{A}$
+The **Agent-Native OS** ($\text{AIOS}$) paradigm shifts the operating system's primary objective from managing hardware primitives (CPU/RAM/Disk) to managing **cognitive resources**. The central bottleneck of modern LLM agents is the finite context window ($\mathcal{C}_{window}$), which acts as a volatile L1 cache. An AIOS implements a virtual memory system to expand this capacity and a scheduling layer to manage agent concurrency.
 
-#### 📌 Executive Summary
-The **Agentic Discovery and Semantic Matchmaking ($\mathcal{D}_{A2A}$)** framework solves the problem of *capability discovery* in a decentralized multi-agent ecosystem. Unlike traditional API registries, $\mathcal{D}_{A2A}$ treats agent capabilities as dynamic, evolving vectors in a high-dimensional latent space. The framework enables agents to autonomously discover, evaluate, and negotiate with peers based on **Semantic Alignment**—ensuring that the discovered agent's "capability manifold" overlaps with the requester's "intent manifold" with high precision ($\text{precision} > 0.95$).
+---
 
-#### 🛠 Technical Architecture
+## 2. Architectural Framework $\mathcal{F}$
 
-##### 1. Decentralized Capability Broadcasting (The Signal Layer)
-To avoid single points of failure, $\mathcal{D}_{A2A}$ utilizes a **Kademlia-based Distributed Hash Table (DHT)** where keys are semantic hashes of capabilities.
-- **Semantic Indexing**: Agents index their capabilities by passing a description through a frozen encoder (e.g., CLIP or a specialized LLM-embedding model).
-- **Gossip-based Propagation**: High-utility agent profiles are cached by peers using a "weighted gossip" protocol, where the weight is determined by the agent's **Reputation Coefficient** ($\mathcal{R}$).
+### 2.1 Virtual Context Management (VCM)
+To overcome the $\mathcal{C}_{window}$ limit, AIOS employs a hierarchical memory architecture:
+- **L1 (Active Context)**: The current prompt window. High latency for retrieval, zero latency for processing.
+- **L2 (Semantic Cache)**: Fast-access vector indices for immediate retrieval of related concepts.
+- **L3 (Archival Store)**: Long-term storage (Disk) containing full history and knowledge bases.
 
-##### 2. Semantic Matchmaking via Latent Space Alignment
-The matchmaking process is defined as a constrained optimization problem:
-$$\text{Match}(\text{Agent}_A, \text{Agent}_B) = \max \left( \cos(\mathbf{v}_A, \mathbf{v}_B) \cdot \mathcal{R}_B \right)$$
-where $\mathbf{v}_A$ is the intent vector and $\mathbf{v}_B$ is the capability vector. To prevent "hallucinated capabilities," the framework requires a **ZKP-Proof of Competence**: a zero-knowledge proof that the agent has successfully executed a similar task in the past without revealing the sensitive data of the previous client.
+**Mechanism: Context Paging**
+$$\text{Context\_State} = \sum_{i=1}^{n} \text{page}_i \cdot w_i$$
+The kernel dynamically "pages" blocks of information into L1 based on a relevance score $w_i$, allowing the agent to operate on a virtual context far larger than the physical window.
+- **Pioneer**: *MemGPT / Letta*
 
-##### 3. The Negotiation Loop (Call-for-Proposal $\rightarrow$ Bid)
-Once a candidate set $\mathcal{S}_{candidates}$ is identified, the requester initiates a **Game-Theoretic Negotiation**:
-1. **Call for Proposal (CFP)**: The requester broadcasts a structured request containing the goal $\mathcal{G}$, constraints $\mathcal{C}$, and a budget $\mathcal{B}$.
-2. **Strategic Bidding**: Agents submit bids $\mathbf{b}_i = \{ \text{price}, \text{estimated\_time}, \text{confidence\_score} \}$.
-3. **Optimal Selection**: The requester applies a **Nash Equilibrium** selection criteria to maximize utility while minimizing cost, selecting the agent that provides the best trade-off between $\text{confidence}$ and $\text{price}$.
+### 2.2 Agent Process Scheduling $\mathcal{S}$
+AIOS treats autonomous agents as **first-class processes**.
+- **Preemption**: The ability to pause an agent's trajectory to handle a higher-priority interrupt.
+- **Topology Routing**:
+    - $\text{Mesh}$: High-frequency cross-verification.
+    - $\text{Forest}$: Hierarchical decomposition (Manager $\rightarrow$ Worker).
+- **Dynamic Model Routing**: Routing tasks to specific LLMs based on a cost-benefit function $\mathcal{U}(m, t)$:
+$$\mathcal{U}(m, t) = \frac{\text{Capability}(m, t)}{\text{Cost}(m) \cdot \text{Latency}(m)}$$
+- **Pioneer**: *Qualixar OS*
 
-#### 📈 Utility Analysis
-- **Actionability**: High. Can be implemented using existing DHT libraries and embedding models.
-- **Architectural Depth**: Deep. Addresses the transition from keyword search to semantic matchmaking.
-- **Novelty**: Introduces ZKP-Proofs of Competence to solve the "Agent Impersonation" problem.
+### 2.3 Semantic I/O and Syscalls
+Replacing traditional POSIX-style paths with semantic identifiers.
+- **Semantic File System (SFS)**: Files are accessed via natural language queries rather than absolute paths.
+- **Agent Syscalls**: Standardized primitives for interaction:
+    - `sys_retrieve(query)` $\rightarrow$ VCM L2/L3 search.
+    - `sys_commit(state)` $\rightarrow$ Permanent write to archival store.
+    - `sys_dispatch(agent_id, task)` $\rightarrow$ Process spawning.
+- **Pioneer**: *LSFS*
+
+### 2.4 Security & Isolation $\mathcal{X}$
+- **Guardrail Interception**: All `sys_dispatch` and tool calls are routed through a policy enforcement engine (e.g., *Agent Armor*).
+- **Provenance**: Content is signed via HMAC to ensure a verifiable chain of agentic reasoning.
+
+---
+
+## 3. State-of-the-Art (SOTA) Mapping
+
+| Layer | Project | Key Innovation | Impact |
+| :--- | :--- | :--- | :--- |
+| **Memory** | MemGPT | Virtual Context Paging | $\infty$ Virtual Window |
+| **Kernel** | AIOS SDK | Modular 4-Layer Arch | Standardized Dev |
+| **Orchestration** | Qualixar OS | Universal Routing | Heterogeneous Multi-Agent |
+| **I/O** | LSFS | Prompt-driven SFS | Natural Language I/O |
+| **Optimization** | ProbeLogits | Kernel Inference Primitives | Low-level Efficiency |
+
+## 4. Critical Gaps & Future Trajectories
+- **Atomic State Recovery**: Lack of "snapshotting" for agent processes to recover from hallucination-induced crashes.
+- **Inter-Agent Memory Sharing**: Current systems are mostly siloed; a "shared memory" segment for multi-agent clusters is required.
+- **Hardware-Native AIOS**: Moving the VCM logic from Python wrappers to C++/Rust kernels for $\mu\text{s}$ latency.
+
+---
+**Sources**:
+- arXiv:2310.08560 (MemGPT)
+- arXiv:2604.06392 (Qualixar OS)
+- arXiv:2410.11843 (LSFS)
+- arXiv:2604.11943 (ProbeLogits)
