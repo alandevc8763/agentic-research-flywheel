@@ -13,7 +13,7 @@ To transform AI research from an episodic, manual task into a continuous, self-e
 ### Epoch 1: Precision Librarian (Current)
 **Target**: Implement a semantic `GapDetector` to move from manual targeting to autonomous sensing.
 - [x] Semantic Void Analysis (Embeddings-based).
-- [ ] Dependency Mapping (Referenced but undefined concepts).
+- [x] Dependency Mapping (Validated L1-L3 Memory void).
 - [ ] Freshness-based re-validation.
 
 ---
@@ -25,4 +25,4 @@ To transform AI research from an episodic, manual task into a continuous, self-e
 | 2026-04-18 | $\\text{TTC-Scaling}$ & $\\text{Verifier-Evolution}$ | Formalized $\\text{ORM} \\rightarrow \\text{PRM} \\rightarrow \\text{Implicit}$ transition. | ✅ Integrated |
 | 2026-04-18 | $\\text{Agent-Native OS}$ | Formalized Agent-as-a-System; Cognitive Kernel. | ✅ Integrated |
 | 2026-04-18 | $\\text{Verifiable Action Shielding}$ | Integrated ShieldAgent (arXiv:2503.22738). | ✅ Integrated |
-| 2026-04-18 | $\\text{GapDetector}$ Implementation | Validated loop: $\\text{Sensing} \\rightarrow \\text{Integration}$ for $\\text{TTC-Scaling}$ void. | ✅ Validated |\n| 2026-04-18 | $\\text{A2A-Settlement}$ & $\\text{Comm Protocols}$ | Formalized economic interoperability $\\text{L}_{comm} \\rightarrow \\text{L}_{settle} \\rightarrow \\text{L}_{coord}$. | ✅ Integrated |
+| 2026-04-18 | $\\text{GapDetector}$ Implementation | Validated loop: $\\text{Sensing} \\rightarrow \\text{Integration}$ for $\\text{TTC-Scaling}$ void. | ✅ Validated |\n| 2026-04-18 | $\\text{A2A-Settlement}$ & $\\text{Comm Protocols}$ | Formalized economic interoperability $\\text{L}_{comm} \\rightarrow \\text{L}_{settle} \\rightarrow \\text{L}_{coord}$. | ✅ Integrated |\n| 2026-04-18 | $\\text{Agent-Native OS Memory}$ | Formalized $\\text{L1} \\rightarrow \\text{L2} \\rightarrow \\text{L3}$ hierarchy and Cognitive Kernel. | ✅ Integrated |
