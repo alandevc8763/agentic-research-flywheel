@@ -1,38 +1,51 @@
-# $\text{PRM-Evolution}$: From Binary Verification to Generative Correction and Implicit Reward Structures
+# 🚀 Test-Time Compute ($\text{TTC}$) Scaling & Verifier Architectures
 
-## 1. Theoretical Framework: The Verifier Bottleneck
-In the scaling of test-time compute ($\text{TTC}$), the bottleneck shifts from the **Generator** (the policy model) to the **Verifier** (the reward model). If the verifier cannot distinguish between a "correct-looking" hallucination and a truly logical step, the system suffers from **Reasoning Drift**.
+**Category**: LLM Reasoning / Inference Optimization  
+**Tags**: `ttc-scaling`, `orm-vs-prm`, `mcts-reasoning`, `adaptive-compute`, `grpo`  
+**Sources**: 
+- Adaptive Test-Time Compute Allocation (arXiv:2604.14853, 2026)
+- DeepSeek-R1 Technical Analysis (GRPO / RLVR)
+- General SOTA Reasoning Frameworks (OpenAI o1-style search)
 
-## 2. Evolutionary Trajectory of Process Reward Models (PRMs)
+## 📌 Executive Summary
+Test-Time Compute ($\text{TTC}$) scaling is the paradigm of increasing the computational budget during the inference phase to improve model performance on complex reasoning tasks. This is achieved by shifting from a "single-shot" generation to a "search-and-verify" loop. The core evolution is the transition from **Outcome Reward Models ($\text{ORM}$)** to **Process Reward Models ($\text{PRM}$)**, enabling more granular guidance of the reasoning trajectory and the application of search algorithms like **Monte Carlo Tree Search ($\text{MCTS}$)**.
 
-### Phase I: Unidirectional Process Supervision ($\text{PRM}_{L2R}$)
-The baseline paradigm where a model assigns a scalar score to each step in a left-to-right trajectory.
-- **Constraint**: Lack of global context; suffers from "greedy" local optima.
+## 🛠 Technical Architecture
 
-### Phase II: Architectural Enhancements ($\text{BiPRM}$, $\text{RetrievalPRM}$, $\text{PQM}$)
-- **$\text{BiPRM}$ (Bidirectional)**: Introduces a parallel right-to-left ($\text{R2L}$) stream, fusing bidirectional context via a gating mechanism. $\text{Gain} \approx 10.6\%$ over unidirectional baselines.
-- **$\text{RetrievalPRM}$**: Combats Out-of-Distribution ($\text{OOD}$) failures by retrieving semantically similar reasoning steps as a warmup.
-- **$\text{PQM}$ (Process Q-value Model)**: Shifts from classification (Cross-Entropy) to Q-value ranking within a Markov Decision Process ($\text{MDP}$) framework.
+### 1. The $\text{TTC}$ Scaling Hierarchy
+$\text{TTC}$ can be scaled across three primary dimensions:
+- **Sampling ($\text{Best-of-N}$)**: Generating $N$ independent trajectories and selecting the best via an $\text{ORM}$. 
+  - $\text{Complexity}$: $O(N \cdot L)$ where $L$ is trajectory length.
+  - $\text{Limitation}$: No inter-step guidance; efficiency drops as task complexity increases.
+- **Search ($\text{Tree/Graph}$)**: Exploring the reasoning space via Beam Search or $\text{MCTS}$ guided by a $\text{PRM}$.
+  - $\text{Complexity}$: $O(B^D)$ where $B$ is branching factor and $D$ is depth.
+  - $\text{Benefit}$: Prunes incorrect paths early, exponentially increasing the probability of finding a correct solution.
+- **Computation ($\text{Chain-of-Thought}$)**: Allowing the model to generate more internal tokens (longer "thinking" process) before providing the final answer.
 
-### Phase III: Generative & Corrective Verifiers ($\text{GM-PRM}$)
-The transition from passive judging to active collaboration.
-- **Mechanism**: Instead of $\text{Score} \in [0, 1]$, the verifier generates a corrected version of the first identified erroneous step.
-- **Impact**: Enables **Refined Best-of-N (Refined-BoN)**, where the generator is steered by the verifier's corrections in real-time.
+### 2. $\text{ORM}$ vs $\text{PRM}$: The Verifier Evolution
+The quality of $\text{TTC}$ scaling depends on the **Verifier** $\mathcal{V}$.
+- **Outcome Reward Model ($\text{ORM}$)**: $\mathcal{V}(\tau) \rightarrow [0, 1]$. Evaluates the final answer.
+  - $\text{Pros}$: Easy to label (ground truth).
+  - $\text{Cons}$: Sparse signal; doesn't penalize "correct answer via wrong reasoning" (reward hacking).
+- **Process Reward Model ($\text{PRM}$)**: $\mathcal{V}(s_i) \rightarrow [0, 1]$ for each step $s_i \in \tau$.
+  - $\text{Pros}$: Dense signal; enables step-level pruning and search.
+  - $\text{Cons}$: Extremely expensive to label (requires human/model expert critique of every step).
 
-### Phase IV: Implicit Reward Structures ($\text{GRPO} \approx \text{PRM}$)
-The theoretical unification of Group Relative Policy Optimization.
-- **Key Insight**: GRPO equipped with an Outcome Reward Model ($\text{ORM}$) is mathematically equivalent to a $\text{PRM}$-aware RL objective using Monte-Carlo based process rewards.
-- **Result**: High-performance reasoning can be achieved without explicit step-level human annotations.
+### 3. Adaptive $\text{TTC}$ Allocation
+Rather than uniform allocation, modern systems use **Adaptive Budgeting** to maximize $\text{Accuracy} / \text{Cost}$:
+$$\max \mathbb{E}[\text{Accuracy}(\text{TTC}_i)] \quad \text{s.t.} \quad \frac{1}{N} \sum \text{TTC}_i \le \text{Budget}$$
+Using **Lagrangian Relaxation**, the optimal allocation is found by pricing accuracy against cost:
+- **Hard Problems**: Higher "price" $\rightarrow$ allocated more samples/search depth.
+- **Easy Problems**: Lower "price" $\rightarrow$ solved via single-shot generation.
+- **Amortization**: A lightweight classifier predicts the optimal $\text{TTC}_i$ based on input features to avoid the cost of the oracle.
 
-## 3. Synthesis Matrix
+### 4. Implicit Rewards and $\text{GRPO}$
+**Group Relative Policy Optimization ($\text{GRPO}$)** enables scaling reasoning without a separate Value/Critic network:
+- **Mechanism**: Samples a group of $G$ outputs $\{o_1, \dots, o_G\}$ for the same prompt.
+- **Advantage**: Uses the relative reward $\hat{A}_i = \frac{r_i - \text{mean}(\mathbf{r})}{\text{std}(\mathbf{r})}$ as the advantage signal.
+- **Effect**: Stabilizes the self-improvement loop and allows the model to discover optimal reasoning paths through relative comparison.
 
-| Paradigm | Signal Type | Context | Primary Utility | Key Model/Paper |
-| :--- | :--- | :--- | :--- | :--- |
-| $\text{ORM}$ | Scalar (End) | Global | Coarse filtering | $\text{RLHF-Baseline}$ |
-| $\text{PRM}$ | Scalar (Step) | Local | Fine-grained credit | $\text{OpenAI-PRM}$ |
-| $\text{BiPRM}$ | Fused Scalar | Bi-directional | Contextual Robustness | $\text{Zhang et al. 2025}$ |
-| $\text{GM-PRM}$ | Generative Text | Collaborative | Direct Correction | $\text{GM-PRM}$ |
-| $\text{GRPO}$ | Relative Group | Implicit | Annotation-free scaling | $\text{DeepSeek-R1}$ |
-
-## 4. Impact on the Flywheel
-This evolution allows the $\text{Agentic Research Flywheel}$ to move toward **Autonomous Gap Detection** by implementing a $\text{GM-PRM}$ based critic that not only identifies a "void" in knowledge but generates the specific research query needed to fill it.
+## 📈 Utility Analysis
+- **Actionability**: High. $\text{Best-of-N}$ is trivial to implement; $\text{MCTS}$ with a $\text{PRM}$ is the current frontier for "Reasoning-as-a-Service".
+- **Architectural Depth**: Deep. Explains the mathematical transition from sparse to dense rewards and the optimization of inference budgets.
+- **Novelty**: Integrates the latest 2026 research on adaptive compute allocation.
