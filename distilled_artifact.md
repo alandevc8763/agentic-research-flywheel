@@ -1,25 +1,29 @@
-# Polaris: Gödel Agent Framework for Recursive Policy Repair
+# 💠 CascadeDebate: Multi-Agent Deliberation for Cost-Aware LLM Cascades
 
-## 🧩 Core Concept
-Polaris implements a **Gödel Agent** architecture, enabling Small Language Models (SLMs) to achieve recursive self-improvement by treating their own operational policy as a mutable object. Unlike traditional self-correction (which is transient/response-level) or fine-tuning (which is opaque/parameter-level), Polaris operates via **Policy Repair**.
+## 📌 Abstract
+$\text{CascadeDebate}$ optimizes the trade-off between accuracy and compute cost in LLM cascades by inserting a **Multi-Agent Deliberation (MAD)** layer at escalation boundaries. Instead of escalating uncertain queries directly to a larger, more expensive model (e.g., $\text{GPT-4} \rightarrow \text{Human}$), the system activates a lightweight agent ensemble to resolve ambiguities via consensus.
 
-## ⚙️ Architectural Pipeline: The Repair Loop
-The framework transforms execution failures into persistent policy enhancements through a structured $\text{S}_4$ cycle:
+## 🛠️ Technical Architecture
 
-1. **Analysis**: The agent inspects its own execution traces to identify the root cause of a failure.
-2. **Strategy Formation**: It formulates a high-level corrective strategy to prevent the error.
-3. **Experience Abstraction**: The specific failure is distilled into a compact, reusable strategy ($\mathcal{A}_{\text{exp}}$) that can transfer to unseen instances.
-4. **Minimal Code Patch**: The strategy is implemented as a small, auditable patch to the agent's policy code/instructions.
+### 1. The Escalation Boundary Trigger
+The system employs a $\text{Confidence-Based Router}$ $\mathcal{R}$. For a query $q$, if the current tier model $M_i$ produces a confidence score $C(M_i, q) < \tau_{threshold}$, the system enters the **Deliberation Phase** rather than immediate escalation.
 
-## 🚀 Key Innovations
-- **Experience Abstraction**: Prevents overfitting to a single instance by abstracting the failure into a generalized rule.
-- **Persistence**: Patches are integrated into the base policy, ensuring that the agent "learns" and doesn't repeat the same mistake across different tasks.
-- **Meta-Reasoning**: Integrates an explicit step where the agent explains its error and proposes concrete revisions, making the evolution process transparent and auditable.
+### 2. Multi-Agent Deliberation (MAD) Layer
+$\text{MAD}$ consists of an ensemble of lightweight models $\{m_1, m_2, \dots, m_k\}$ that perform parallel reasoning.
+- **Consensus Mechanism**: A voting or synthesis agent $\mathcal{S}$ aggregates the outputs.
+- **Resolution**: If $\text{Consensus}(\{m_j\}) \rightarrow \text{High Confidence}$, the result is returned, bypassing the expensive $M_{i+1}$.
+- **Fallback**: If deliberation fails to reach consensus, the query is escalated to $M_{i+1}$.
 
-## 📊 Performance & Impact
-- **Target**: Compact models (e.g., 7B parameters).
-- **Evaluation**: Demonstrates consistent gains on MGSM (math), DROP (reading comprehension), GPQA (graduate-level science), and LitBench (creative writing).
-- **Significance**: Proves that recursive self-improvement is viable for SLMs without requiring massive compute for retraining.
+### 3. Dynamic Compute Scaling
+The total test-time compute $\text{TTC}_{total}$ is defined as:
+$$\text{TTC}_{total} = \sum_{i=1}^{n} \mathbb{I}(\text{escalate}_i) \cdot \text{Cost}(M_i) + \sum_{i=1}^{n} \mathbb{I}(\text{deliberate}_i) \cdot \text{Cost}(\text{MAD}_i)$$
+where $\mathbb{I}(\cdot)$ is the indicator function. This allows for **elastic adaptation** to query difficulty.
 
-**Tags**: `#RecursiveSelfImprovement` `#GödelAgent` `#PolicyRepair` `#SLM` `#MetaReasoning`
-**Sources**: `https://arxiv.org/abs/2603.23129`
+## 📈 Impact & Performance
+- **Accuracy**: Up to $26.75\%$ improvement over standalone cascades.
+- **Efficiency**: Significant reduction in high-cost model invocations.
+- **Optimization**: An online threshold optimizer $\mathcal{O}$ dynamically adjusts $\tau_{threshold}$ based on the real-world distribution.
+
+## 🔗 Reference
+- **Paper**: [arXiv:2604.12262](https://arxiv.org/abs/2604.12262)
+- **Tags**: `#MultiAgent` `#TTC` `#ComputeScaling` `#LLMCascades`
