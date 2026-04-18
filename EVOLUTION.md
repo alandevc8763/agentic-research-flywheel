@@ -66,3 +66,20 @@ This document records the self-evolution trajectory of the Research Flywheel. It
 The system is moving from a **Linear Pipe** to a **State-Aware Cycle**. 
 
 **Next Target**: Implement the `GapDetector` using the absorbed $\text{Superpowers}$ methodology and $\text{Nuwa}$ distillation logic.
+
+## 🌀 Evolution Cycle 04: Verifiable Shielding Integration
+
+### 1. Observation (Gap Sensing)
+- **Void**: The Second Brain possessed depth on *planning* (World Models) but lacked *verification* of those plans.
+- **Target**: Identify mechanisms for formal, verifiable safety constraints in agentic trajectories.
+
+### 2. Hunting & Alchemy
+- **Discovery**: Identified `ShieldAgent` (arXiv:2503.22738), which uses **Probabilistic Rule Circuits** and executable code for formal verification.
+- **Distillation**: Transformed raw paper findings into a high-signal artifact focusing on the $	ext{Retrieve} ightarrow 	ext{Verify} ightarrow 	ext{Shield}$ pipeline.
+
+### 3. Integration
+- **Sync**: Artifact integrated into `curated_resources.md` and synced to `awesome-ai-discoveries` repo.
+- **Result**: Expanded the safety frontier of the Second Brain.
+
+### 4. Reflection
+- The cycle was executed successfully, but the `GapDetector` remains a manual process. The transition to Epoch 1 (Precision Librarian) is critical to remove the human-in-the-loop sensing phase.
