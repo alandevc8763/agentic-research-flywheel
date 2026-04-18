@@ -1,29 +1,38 @@
-# 💠 CascadeDebate: Multi-Agent Deliberation for Cost-Aware LLM Cascades
+# $\text{PRM-Evolution}$: From Binary Verification to Generative Correction and Implicit Reward Structures
 
-## 📌 Abstract
-$\text{CascadeDebate}$ optimizes the trade-off between accuracy and compute cost in LLM cascades by inserting a **Multi-Agent Deliberation (MAD)** layer at escalation boundaries. Instead of escalating uncertain queries directly to a larger, more expensive model (e.g., $\text{GPT-4} \rightarrow \text{Human}$), the system activates a lightweight agent ensemble to resolve ambiguities via consensus.
+## 1. Theoretical Framework: The Verifier Bottleneck
+In the scaling of test-time compute ($\text{TTC}$), the bottleneck shifts from the **Generator** (the policy model) to the **Verifier** (the reward model). If the verifier cannot distinguish between a "correct-looking" hallucination and a truly logical step, the system suffers from **Reasoning Drift**.
 
-## 🛠️ Technical Architecture
+## 2. Evolutionary Trajectory of Process Reward Models (PRMs)
 
-### 1. The Escalation Boundary Trigger
-The system employs a $\text{Confidence-Based Router}$ $\mathcal{R}$. For a query $q$, if the current tier model $M_i$ produces a confidence score $C(M_i, q) < \tau_{threshold}$, the system enters the **Deliberation Phase** rather than immediate escalation.
+### Phase I: Unidirectional Process Supervision ($\text{PRM}_{L2R}$)
+The baseline paradigm where a model assigns a scalar score to each step in a left-to-right trajectory.
+- **Constraint**: Lack of global context; suffers from "greedy" local optima.
 
-### 2. Multi-Agent Deliberation (MAD) Layer
-$\text{MAD}$ consists of an ensemble of lightweight models $\{m_1, m_2, \dots, m_k\}$ that perform parallel reasoning.
-- **Consensus Mechanism**: A voting or synthesis agent $\mathcal{S}$ aggregates the outputs.
-- **Resolution**: If $\text{Consensus}(\{m_j\}) \rightarrow \text{High Confidence}$, the result is returned, bypassing the expensive $M_{i+1}$.
-- **Fallback**: If deliberation fails to reach consensus, the query is escalated to $M_{i+1}$.
+### Phase II: Architectural Enhancements ($\text{BiPRM}$, $\text{RetrievalPRM}$, $\text{PQM}$)
+- **$\text{BiPRM}$ (Bidirectional)**: Introduces a parallel right-to-left ($\text{R2L}$) stream, fusing bidirectional context via a gating mechanism. $\text{Gain} \approx 10.6\%$ over unidirectional baselines.
+- **$\text{RetrievalPRM}$**: Combats Out-of-Distribution ($\text{OOD}$) failures by retrieving semantically similar reasoning steps as a warmup.
+- **$\text{PQM}$ (Process Q-value Model)**: Shifts from classification (Cross-Entropy) to Q-value ranking within a Markov Decision Process ($\text{MDP}$) framework.
 
-### 3. Dynamic Compute Scaling
-The total test-time compute $\text{TTC}_{total}$ is defined as:
-$$\text{TTC}_{total} = \sum_{i=1}^{n} \mathbb{I}(\text{escalate}_i) \cdot \text{Cost}(M_i) + \sum_{i=1}^{n} \mathbb{I}(\text{deliberate}_i) \cdot \text{Cost}(\text{MAD}_i)$$
-where $\mathbb{I}(\cdot)$ is the indicator function. This allows for **elastic adaptation** to query difficulty.
+### Phase III: Generative & Corrective Verifiers ($\text{GM-PRM}$)
+The transition from passive judging to active collaboration.
+- **Mechanism**: Instead of $\text{Score} \in [0, 1]$, the verifier generates a corrected version of the first identified erroneous step.
+- **Impact**: Enables **Refined Best-of-N (Refined-BoN)**, where the generator is steered by the verifier's corrections in real-time.
 
-## 📈 Impact & Performance
-- **Accuracy**: Up to $26.75\%$ improvement over standalone cascades.
-- **Efficiency**: Significant reduction in high-cost model invocations.
-- **Optimization**: An online threshold optimizer $\mathcal{O}$ dynamically adjusts $\tau_{threshold}$ based on the real-world distribution.
+### Phase IV: Implicit Reward Structures ($\text{GRPO} \approx \text{PRM}$)
+The theoretical unification of Group Relative Policy Optimization.
+- **Key Insight**: GRPO equipped with an Outcome Reward Model ($\text{ORM}$) is mathematically equivalent to a $\text{PRM}$-aware RL objective using Monte-Carlo based process rewards.
+- **Result**: High-performance reasoning can be achieved without explicit step-level human annotations.
 
-## 🔗 Reference
-- **Paper**: [arXiv:2604.12262](https://arxiv.org/abs/2604.12262)
-- **Tags**: `#MultiAgent` `#TTC` `#ComputeScaling` `#LLMCascades`
+## 3. Synthesis Matrix
+
+| Paradigm | Signal Type | Context | Primary Utility | Key Model/Paper |
+| :--- | :--- | :--- | :--- | :--- |
+| $\text{ORM}$ | Scalar (End) | Global | Coarse filtering | $\text{RLHF-Baseline}$ |
+| $\text{PRM}$ | Scalar (Step) | Local | Fine-grained credit | $\text{OpenAI-PRM}$ |
+| $\text{BiPRM}$ | Fused Scalar | Bi-directional | Contextual Robustness | $\text{Zhang et al. 2025}$ |
+| $\text{GM-PRM}$ | Generative Text | Collaborative | Direct Correction | $\text{GM-PRM}$ |
+| $\text{GRPO}$ | Relative Group | Implicit | Annotation-free scaling | $\text{DeepSeek-R1}$ |
+
+## 4. Impact on the Flywheel
+This evolution allows the $\text{Agentic Research Flywheel}$ to move toward **Autonomous Gap Detection** by implementing a $\text{GM-PRM}$ based critic that not only identifies a "void" in knowledge but generates the specific research query needed to fill it.
