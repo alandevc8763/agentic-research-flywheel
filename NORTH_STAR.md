@@ -1,1 +1,30 @@
-File unchanged since last read. The content from the earlier read_file result in this conversation is still current — refer to that instead of re-reading.
+# 🌟 NORTH STAR: Agentic Research Flywheel
+
+## 🎯 The Grand Vision
+To transform AI research from an episodic, manual task into a continuous, self-evolving autonomous loop that proactively identifies and fills knowledge voids in the Second Brain.
+
+## 🚀 Epochs & Milestones
+
+### Epoch 0: Linear MVP (Completed)
+- [x] Basic `Search` $\rightarrow$ `Distill` $\rightarrow$ `Push` pipeline.
+- [x] Standardized "Discovery Template".
+- [x] End-to-end verification from trigger to GitHub.
+
+### Epoch 1: Precision Librarian (Current)
+**Target**: Implement a semantic `GapDetector` to move from manual targeting to autonomous sensing.
+- [x] Semantic Void Analysis (Embeddings-based).
+- [x] Dependency Mapping (Validated L1-L3 Memory void).
+- [ ] Freshness-based re-validation.
+
+---
+
+## 📊 Progress Tracking Matrix
+
+| Date | Target / Milestone | Outcome | Status |
+|------|--------------------|---------|--------|
+| 2026-04-18 | $\\text{TTC-Scaling}$ & $\\text{Verifier-Evolution}$ | Formalized $\\text{ORM} \\rightarrow \\text{PRM} \\rightarrow \\text{Implicit}$ transition. | ✅ Integrated |
+| 2026-04-18 | $\\text{Agent-Native OS}$ | Formalized Agent-as-a-System; Cognitive Kernel. | ✅ Integrated |
+| 2026-04-18 | $\\text{Verifiable Action Shielding}$ | Integrated ShieldAgent (arXiv:2503.22738). | ✅ Integrated |
+| 2026-04-18 | $\\text{GapDetector}$ Implementation | Validated loop: $\\text{Sensing} \\rightarrow \\text{Integration}$ for $\\text{TTC-Scaling}$ void. | ✅ Validated |\n| 2026-04-18 | $\\text{A2A-Settlement}$ & $\\text{Comm Protocols}$ | Formalized economic interoperability $\\text{L}_{comm} \\rightarrow \\text{L}_{settle} \\rightarrow \\text{L}_{coord}$. | ✅ Integrated |\n| 2026-04-18 | $\\text{Agent-Native OS Memory}$ | Formalized $\\text{L1} \\rightarrow \\text{L2} \\rightarrow \\text{L3}$ hierarchy and Cognitive Kernel. | ✅ Integrated |
+
+| 2026-04-19 | $\text{Agent-Driven Corpus Linguistics}$ | Framework for autonomous linguistic discovery via MCP/CQP; validated la-diachronic relay chains. | ✅ Integrated |\n
