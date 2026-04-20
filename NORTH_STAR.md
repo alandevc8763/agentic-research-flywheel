@@ -60,6 +60,4 @@
 | 2026-04-21 | $\\text{Sybil Detection Mechanics}$ | Formalized Behavioral Clustering $\\text{HDBSCAN}$ $\\rightarrow$ $\\text{S}_{coord}$ for agentic economy trust. | ✅ Integrated |
 | 2026-04-21 | $\\text{Metabolic Governance}$ | Integrated $\\text{M}_{meta}$ framework for memory ossification prevention. | ✅ Integrated |
 | 2026-04-21 | $\\text{Experience Compression Spectrum}$ | Formalized $\\text{L1} \\rightarrow \\text{L2} \\rightarrow \\text{L3}$ compression axis for agent experience. | ✅ Integrated |
-
-| 2026-04-21 | $\\text{Metabolic Governance}$ | Integrated $\\text{M}_{meta}$ framework for memory ossification prevention. | ✅ Integrated |
-| 2026-04-21 | $\\text{Experience Compression Spectrum}$ | Formalized $\\text{L1} \\rightarrow \\text{L2} \\rightarrow \\text{L3}$ compression axis for agent experience. | ✅ Integrated |
+| 2026-04-21 | $\text{Explanatory Equilibrium}$ | Formalized coordination-verification balance via SRA. | ✅ Integrated |
