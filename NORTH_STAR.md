@@ -9,3 +9,4 @@
 | 2026-04-21 | $\\text{Multi-Agent Coordination}$ | Integrated CoalT and Explanatory Equilibrium for game-theoretic stability. | ✅ Integrated |
 
 | 2026-04-21 | $\\text{Agentic OS Runtime}$ | Integrated Qualixar OS: universal orchestration with MCP/A2A compatibility and Bayesian routing. | ✅ Integrated |
+| 2026-04-21 | $\text{Modality-Native A2A Routing}$ | Integrated MMA2A protocol analysis; quantified $\Delta\text{TCA}$ gains for multimodal routing. | ✅ Integrated |
