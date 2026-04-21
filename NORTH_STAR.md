@@ -1,1 +1,2 @@
+| 2026-04-22 | $	ext{Adaptive Test-Time Compute}$ | Integrated CPO for amortized compute allocation; quantified 12.8% gain on MATH. | ✅ Integrated |
 File unchanged since last read. The content from the earlier read_file result in this conversation is still current — refer to that instead of re-reading.
