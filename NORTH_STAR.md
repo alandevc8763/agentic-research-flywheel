@@ -1,2 +1,36 @@
-| 2026-04-22 | $	ext{Adaptive Test-Time Compute}$ | Integrated CPO for amortized compute allocation; quantified 12.8% gain on MATH. | ✅ Integrated |
-File unchanged since last read. The content from the earlier read_file result in this conversation is still current — refer to that instead of re-reading.
+# 🌟 North Star: Agentic Research Flywheel
+
+## 🌌 The Vision
+To transform the Second Brain from a static repository into an autonomously evolving intelligence engine that proactively harvests the frontier of AI research.
+
+## 📅 Epochs & Milestones
+
+### Epoch 0: Genesis (Linear Pipeline)
+- [x] Basic Research $\rightarrow$ Distillation $\rightarrow$ Integration flow.
+- [x] Standardized Artifact Schema.
+- [x] Manual Triggering Mechanism.
+
+### Epoch 1: Precision Librarian (Sensing Autonomy) 🚀
+**Current Focus**: Implementing the `GapDetector` to remove human-in-the-loop sensing.
+- [ ] Semantic Void Analysis (Embeddings).
+- [ ] Dependency Mapping (Entity-Reference Graph).
+- [ ] Automated Research Target Generation.
+
+### Epoch 2: Deep Alchemist (Distillation Rigor)
+- [ ] Multi-Agent Critique Loop.
+- [ ] Automated Utility Scoring ($\text{Actionability}, \text{Depth}, \text{Novelty}$).
+- [ ] LaTeX-First Formalization.
+
+### Epoch 3: Sovereign Engine (Self-Evolution)
+- [ ] Trajectory Analysis $\rightarrow$ Strategy Mutation.
+- [ ] Autonomous Prompt Engineering for Distillation.
+- [ ] Real-time Triggering via Webhooks.
+
+---
+
+## 📊 Progress Tracking Matrix
+
+| Date | Target | Result | Status |
+| :--- | :--- | :--- | :--- |
+| 2026-04-22 | $\text{Adaptive Test-Time Compute}$ | Integrated CPO for amortized compute allocation; quantified 12.8% gain on MATH. | ✅ Integrated |
+| 2026-04-22 | $\text{RLVR/GRPO Reasoning Alignment}$ | TBD | 🔄 In Progress |
