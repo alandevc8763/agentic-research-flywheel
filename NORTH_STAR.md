@@ -33,4 +33,4 @@ To transform the Second Brain from a static repository into an autonomously evol
 | Date | Target | Result | Status |
 | :--- | :--- | :--- | :--- |
 | 2026-04-22 | $\text{Adaptive Test-Time Compute}$ | Integrated CPO for amortized compute allocation; quantified 12.8% gain on MATH. | ✅ Integrated |
-| 2026-04-22 | $\text{RLVR/GRPO Reasoning Alignment}$ | TBD | 🔄 In Progress |
+| 2026-04-22 | $\text{RLVR/GRPO Reasoning Alignment}$ | Mitigated reward hacking via structural constraints and group-relative baselines. | ✅ Integrated |
