@@ -12,7 +12,7 @@ To transform the Second Brain from a static repository into an autonomously evol
 
 ### Epoch 1: Precision Librarian (Sensing Autonomy) 🚀
 **Current Focus**: Implementing the `GapDetector` to remove human-in-the-loop sensing.
-- [ ] Semantic Void Analysis (Embeddings).
+- [x] Semantic Void Analysis (Embeddings).
 - [ ] Dependency Mapping (Entity-Reference Graph).
 - [ ] Automated Research Target Generation.
 

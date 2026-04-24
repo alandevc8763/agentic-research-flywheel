@@ -1,15 +1,1 @@
-{
-  "epoch": 3,
-  "status": "completed",
-  "current_phase": "none",
-  "research_target": "Game-Theoretic Coordination Protocols",
-  "gap_description": "Lack of formal coordination and equilibrium mechanisms for multi-agent LLM systems.",
-  "discovered_entities": [
-    "Coalition-of-Thought (CoalT)",
-    "Explanatory Equilibrium",
-    "Nash-stable partitions"
-  ],
-  "artifacts_created": [
-    "Game-Theoretic-Coordination.md"
-  ]
-}
+{"epoch": 4, "status": "completed", "current_phase": "none", "research_target": "Adaptive Test-Time Compute", "gap_description": "Lack of amortized compute allocation strategies for reasoning LLMs", "discovered_entities": ["Constrained Policy Optimization", "Lagrangian Relaxation", "Amortized Allocation"], "artifacts_created": ["Adaptive-Test-Time-Compute.md"]}
