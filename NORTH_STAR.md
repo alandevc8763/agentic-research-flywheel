@@ -34,3 +34,4 @@ To transform the Second Brain from a static repository into an autonomously evol
 | :--- | :--- | :--- | :--- |
 | 2026-04-22 | $\text{Adaptive Test-Time Compute}$ | Integrated CPO for amortized compute allocation; quantified 12.8% gain on MATH. | ✅ Integrated |
 | 2026-04-22 | $\text{RLVR/GRPO Reasoning Alignment}$ | Mitigated reward hacking via structural constraints and group-relative baselines. | ✅ Integrated |
+| 2026-04-24 | $\text{Multi-Agent Critique Distillation}$ | Integrated Critique-RL (two-stage optimization) and dSC (Bayesian RLAIF) into Second Brain. | ✅ Integrated |
