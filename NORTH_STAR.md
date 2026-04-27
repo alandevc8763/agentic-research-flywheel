@@ -10,11 +10,7 @@ To transform the Second Brain from a static repository into an autonomously evol
 - [x] Standardized Artifact Schema.
 - [x] Manual Triggering Mechanism.
 
-### Epoch 1: Precision Librarian (Sensing Autonomy) 🚀
-**Current Focus**: Implementing the `GapDetector` to remove human-in-the-loop sensing.
-- [x] Semantic Void Analysis (Embeddings).
-- [ ] Dependency Mapping (Entity-Reference Graph).
-- [ ] Automated Research Target Generation.
+### Epoch 1: Precision Librarian (Sensing Autonomy) 🚀\n**Current Focus**: Implementing the `GapDetector` to remove human-in-the-loop sensing.\n- [x] Semantic Void Analysis (Embeddings).\n- [x] Epistemic Density Mapping (Pseudo-counts/CFN).\n- [x] Dependency Mapping (Entity-Reference Graph).\n- [ ] Automated Research Target Generation.
 
 ### Epoch 2: Deep Alchemist (Distillation Rigor)
 - [ ] Multi-Agent Critique Loop.
