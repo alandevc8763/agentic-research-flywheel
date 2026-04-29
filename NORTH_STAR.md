@@ -15,6 +15,7 @@ To transform the Second Brain from a static repository into an autonomously evol
 - [x] Semantic Void Analysis (Embeddings).
 - [x] Dependency Mapping (Entity-Reference Graph).
 - [x] Automated Research Target Generation.
+- [x] Topological Void Detection (TDA-SVD).
 
 ### Epoch 2: Deep Alchemist (Distillation Rigor)
 - [ ] Multi-Agent Critique Loop.
