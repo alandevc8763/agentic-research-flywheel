@@ -21,7 +21,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | Milestone | Status | Completion | Target Date | Notes |
 |-----------|--------|-------------|-------------|--------|
 | Linear Pipeline | ✅ | 100% | Q1 2026 | End-to-end flow verified. |
-| Gap Detection | 🏗️ | 10% | Q2 2026 | Transitioning from stub to semantic analysis. |
+| Gap Detection | 🏗️ | 15% | Q2 2026 | Transitioning from stub to semantic analysis. |
 | Distillation $\text{SNR}$ | 🟡 | 40% | Q2 2026 | Applying Nuwa distillation logic. |
 | Sync Automation | ✅ | 90% | Q1 2026 | GitHub sync operational. |
 
