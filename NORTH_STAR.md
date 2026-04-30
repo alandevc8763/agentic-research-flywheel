@@ -37,7 +37,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | 2026-04-21 | $\text{Hierarchical Goal Decomposition}$ | Integrated SCOPE: one-shot distillation of LLM subgoals for efficient planning; $\Delta\text{Latency} \approx -98\%$. | ✅ Integrated |
 | 2026-04-29 | $\text{Agentic World Modeling}$ | Integrated Levels $\times$ Laws taxonomy for environment simulation (L1-L3). | ✅ Integrated |
 | 2026-04-29 | $\text{Agentic Harness Engineering}$ | Integrated Observability-Driven Evolution for coding-agent harnesses. | ✅ Integrated |
-|| 2026-04-30 | $\text{Omni-Modal RL Scaling}$ | Integrated $\text{Relax}$ engine: asynchronous RL for omni-modal post-training; $2.00\times$ throughput gain. | ✅ Integrated |\n|| 2026-04-30 | $\text{Wake-Sleep Lemma Evolution}$ | Integrated $\text{DreamProver}$: wake-sleep paradigm for autonomous lemma discovery and library optimization. | ✅ Integrated |
+|| 2026-04-30 | $\\text{Omni-Modal RL Scaling}$ | Integrated $\\text{Relax}$ engine: asynchronous RL for omni-modal post-training; $2.00\\times$ throughput gain. | ✅ Integrated |\n|| 2026-04-30 | $\\text{Wake-Sleep Lemma Evolution}$ | Integrated $\\text{DreamProver}$: wake-sleep paradigm for autonomous lemma discovery and library optimization. | ✅ Integrated |\n|| 2026-04-30 | $\\text{Agentic SRE Orchestration}$ | Integrated $\\text{Bian Que}$: Flexible skill arrangement and self-evolving mechanisms for large-scale O&M. | ✅ Integrated |
 
 ---
 
