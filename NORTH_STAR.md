@@ -21,7 +21,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | Milestone | Status | Completion | Target Date | Notes |
 |-----------|--------|-------------|-------------|--------|
 | Linear Pipeline | ✅ | 100% | Q1 2026 | End-to-end flow verified. |
-|| Gap Detection | 🏗️ | 80% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. Successfully operationalized autonomous sensing loop via Dependency Mapping. Integrated CASCADE-style skill acquisition patterns for autonomous tool mastery. Integrated Reasoning Gym for RLVR-based verification. Integrated $\\text{SSL-R1}$ for multimodal RLVR scaling. Operationalized dependency-driven gap detection in current cycle. |\n
+|| Gap Detection | 🏗️ | 85% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. Successfully operationalized autonomous sensing loop via Dependency Mapping. Integrated CASCADE-style skill acquisition patterns for autonomous tool mastery. Integrated Reasoning Gym for RLVR-based verification. Integrated $\\text{SSL-R1}$ for multimodal RLVR scaling. Operationalized dependency-driven gap detection in current cycle. Integrated Certified Reasoning Trajectories (CRT) for step-level verifiability. |\n
 | Distillation $\\text{SNR}$ | 🟡 | 50% | Q2 2026 | Applying Nuwa distillation logic. |
 | Sync Automation | ✅ | 100% | Q1 2026 | GitHub sync operational. |
 
