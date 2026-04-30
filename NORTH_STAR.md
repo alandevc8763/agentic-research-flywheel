@@ -21,7 +21,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | Milestone | Status | Completion | Target Date | Notes |
 |-----------|--------|-------------|-------------|--------|
 | Linear Pipeline | ✅ | 100% | Q1 2026 | End-to-end flow verified. |
-|| Gap Detection | 🏗️ | 75% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. Successfully operationalized autonomous sensing loop via Dependency Mapping. Integrated CASCADE-style skill acquisition patterns for autonomous tool mastery. Integrated Reasoning Gym for RLVR-based verification. Integrated $\\text{SSL-R1}$ for multimodal RLVR scaling. |\n
+|| Gap Detection | 🏗️ | 80% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. Successfully operationalized autonomous sensing loop via Dependency Mapping. Integrated CASCADE-style skill acquisition patterns for autonomous tool mastery. Integrated Reasoning Gym for RLVR-based verification. Integrated $\\text{SSL-R1}$ for multimodal RLVR scaling. Operationalized dependency-driven gap detection in current cycle. |\n
 | Distillation $\\text{SNR}$ | 🟡 | 50% | Q2 2026 | Applying Nuwa distillation logic. |
 | Sync Automation | ✅ | 100% | Q1 2026 | GitHub sync operational. |
 
@@ -37,7 +37,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | 2026-04-21 | $\text{Hierarchical Goal Decomposition}$ | Integrated SCOPE: one-shot distillation of LLM subgoals for efficient planning; $\Delta\text{Latency} \approx -98\%$. | ✅ Integrated |
 | 2026-04-29 | $\text{Agentic World Modeling}$ | Integrated Levels $\times$ Laws taxonomy for environment simulation (L1-L3). | ✅ Integrated |
 | 2026-04-29 | $\text{Agentic Harness Engineering}$ | Integrated Observability-Driven Evolution for coding-agent harnesses. | ✅ Integrated |
-| 2026-04-30 | $\text{Omni-Modal RL Scaling}$ | Integrated $\text{Relax}$ engine: asynchronous RL for omni-modal post-training; $2.00\times$ throughput gain. | ✅ Integrated |
+|| 2026-04-30 | $\text{Omni-Modal RL Scaling}$ | Integrated $\text{Relax}$ engine: asynchronous RL for omni-modal post-training; $2.00\times$ throughput gain. | ✅ Integrated |\n|| 2026-04-30 | $\text{Wake-Sleep Lemma Evolution}$ | Integrated $\text{DreamProver}$: wake-sleep paradigm for autonomous lemma discovery and library optimization. | ✅ Integrated |
 
 ---
 
