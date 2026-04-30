@@ -21,7 +21,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | Milestone | Status | Completion | Target Date | Notes |
 |-----------|--------|-------------|-------------|--------|
 | Linear Pipeline | ✅ | 100% | Q1 2026 | End-to-end flow verified. |
-|| Gap Detection | 🏗️ | 35% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. |\n
+|| Gap Detection | 🏗️ | 40% | Q2 2026 | Transitioning from stub to semantic analysis. Integrated DeepSeek-R1 GRPO logic for self-evolution. Integrated BATS for resource-aware trajectory scaling. Successfully operationalized autonomous sensing loop via Dependency Mapping. |\n
 | Distillation $\\text{SNR}$ | 🟡 | 50% | Q2 2026 | Applying Nuwa distillation logic. |
 | Sync Automation | ✅ | 100% | Q1 2026 | GitHub sync operational. |
 
