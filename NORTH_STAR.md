@@ -39,7 +39,8 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | 2026-04-29 | $\text{Agentic Harness Engineering}$ | Integrated Observability-Driven Evolution for coding-agent harnesses. | ✅ Integrated |
 || 2026-04-30 | $\\text{Omni-Modal RL Scaling}$ | Integrated $\\text{Relax}$ engine: asynchronous RL for omni-modal post-training; $2.00\\times$ throughput gain. | ✅ Integrated |\n|| 2026-04-30 | $\\text{Wake-Sleep Lemma Evolution}$ | Integrated $\\text{DreamProver}$: wake-sleep paradigm for autonomous lemma discovery and library optimization. | ✅ Integrated |\n|| 2026-04-30 | $\\text{Agentic SRE Orchestration}$ | Integrated $\\text{Bian Que}$: Flexible skill arrangement and self-evolving mechanisms for large-scale O&M. | ✅ Integrated |
 
-| 2026-05-01 | $	ext{RAD Distillation}$ | Closed the Transformer-SSM retrieval gap using G&A head preservation; $\Delta	ext{Memory} pprox 5	ext{--}6	imes$. | ✅ Integrated |
+|| 2026-05-01 | $\text{RAD Distillation}$ | Closed the Transformer-SSM retrieval gap using G&A head preservation; $\Delta\text{Memory} \approx 5\text{--}6\times$. | ✅ Integrated |
+|| 2026-05-01 | $\text{DMTO}$ | Operationalized Dynamic Memory Topology Optimization for $\text{SNR}$ maintenance in scaling graphs. | ✅ Integrated |
 ---
 
 
