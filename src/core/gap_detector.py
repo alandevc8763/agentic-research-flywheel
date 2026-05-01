@@ -11,8 +11,15 @@ class GapDetector:
     def _extract_entities(self, text):
         """Extracts potential technical entities (Acronyms, LaTeX terms, Capitalized Terms)."""
         entities = set()
+        # Stop-words to filter out generic capitalized terms
+        stop_words = {
+            "Resource", "Source", "Link", "Entity", "Category", "Implementation", 
+            "Section", "Chapter", "Figure", "Table", "Example", "Note", "Reference",
+            "Conclusion", "Introduction", "Abstract", "Method", "Results", "Discussion"
+        }
+
         # 1. LaTeX notation: $\text{...}$
-        latex_matches = re.findall(r"\\\text{\\?([a-zA-Z0-9\-\s_\(\)]+)}", text)
+        latex_matches = re.findall(r"\\\text{\?([a-zA-Z0-9\-\s_\(\)]+)}", text)
         entities.update(latex_matches)
         
         # 2. Acronyms: 3+ uppercase letters
@@ -20,9 +27,9 @@ class GapDetector:
         entities.update(acronym_matches)
         
         # 3. Proper nouns/Technical terms: Capitalized words (excluding start of sentence)
-        # Simple heuristic: sequences of capitalized words not at the very start of a line
         proper_matches = re.findall(r"(?<!^)\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)*)\b", text)
-        entities.update(proper_matches)
+        filtered_proper = {m for m in proper_matches if m not in stop_words}
+        entities.update(filtered_proper)
         
         return entities
 
