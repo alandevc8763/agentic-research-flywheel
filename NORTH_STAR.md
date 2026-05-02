@@ -43,7 +43,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 
 || 2026-05-01 | $\text{RAD Distillation}$ | Closed the Transformer-SSM retrieval gap using G&A head preservation; $\Delta\text{Memory} \approx 5\text{--}6\times$. | ✅ Integrated |
 || 2026-05-01 | $\\text{DMTO}$ | Operationalized Dynamic Memory Topology Optimization for $\\text{SNR}$ maintenance in scaling graphs. | ✅ Integrated |\n|| 2026-05-01 | $\\text{T}^2$-Scaling | Integrated Train-to-Test scaling laws; proved overtraining optimality for $\\text{pass}@k$ search efficiency. | ✅ Integrated |\n---
-| 2026-05-02 | $\text{GNWM}$ | Integrated Global Neural World Model; achieved topological quantization for drift-free planning. | ✅ Integrated |\n| 2026-05-02 | $\text{Hierarchical Proof Search}$ | Integrated Gödel-Code-Prover; established operator-footprint based decomposition score for $\text{Lean 4}$ verification; verified monotonic inference-time scaling. | ✅ Integrated |
+|| 2026-05-02 | $\\text{GNWM}$ | Integrated Global Neural World Model; achieved topological quantization for drift-free planning. | ✅ Integrated |\\n| 2026-05-02 | $\\text{Hierarchical Proof Search}$ | Integrated Gödel-Code-Prover; established operator-footprint based decomposition score for $\\text{Lean 4}$ verification; verified monotonic inference-time scaling. | ✅ Integrated |\n| 2026-05-02 | $\\text{SEVerA}$ | Integrated Verified Synthesis of Self-Evolving Agents; established FOL-contract based generative guards (FGGM) for $0\\%$ constraint violation in agentic tool use. | ✅ Integrated |
 
 
 
