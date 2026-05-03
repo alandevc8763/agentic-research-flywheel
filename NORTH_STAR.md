@@ -45,7 +45,7 @@ Transform the Second Brain from a static repository of links into a **self-evolv
 | 2026-05-02 | $\text{Non-Monotonic Reasoning}$ | Integrated Stream of Revision and ASTRO paradigms; established substrate for self-correcting trajectories. | ✅ Integrated |
 || 2026-05-01 | $\\text{DMTO}$ | Operationalized Dynamic Memory Topology Optimization for $\\text{SNR}$ maintenance in scaling graphs. | ✅ Integrated |\n|| 2026-05-01 | $\\text{T}^2$-Scaling | Integrated Train-to-Test scaling laws; proved overtraining optimality for $\\text{pass}@k$ search efficiency. | ✅ Integrated |\n---
 || 2026-05-02 | $\\text{GNWM}$ | Integrated Global Neural World Model; achieved topological quantization for drift-free planning. | ✅ Integrated |\\n| 2026-05-02 | $\\text{Hierarchical Proof Search}$ | Integrated Gödel-Code-Prover; established operator-footprint based decomposition score for $\\text{Lean 4}$ verification; verified monotonic inference-time scaling. | ✅ Integrated |\n| 2026-05-02 | $\\text{SEVerA}$ | Integrated Verified Synthesis of Self-Evolving Agents; established FOL-contract based generative guards (FGGM) for $0\\%$ constraint violation in agentic tool use. | ✅ Integrated |
-| 2026-05-03 | $\text{MMA2A Protocol}$ | Integrated modality-native routing analysis; established $\Delta\text{TCA} \approx +20\text{pp}$ baseline for multimodal A2A. | ✅ Integrated |
+| 2026-05-03 | $\\text{MMA2A Protocol}$ | Integrated modality-native routing analysis; established $\\Delta\\text{TCA} \\approx +20\\text{pp}$ baseline for multimodal A2A. | ✅ Integrated |\\n| 2026-05-03 | $\\text{CMSA}$ | Integrated Cross-Modal Semantic Alignment for modality-native routing; eliminated semantic drift in A2A modality shifts. | ✅ Integrated |
 
 
 
