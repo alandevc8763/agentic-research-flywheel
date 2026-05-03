@@ -47,9 +47,10 @@ class GapDetector:
         with open(self.kb_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Identify existing entries (headers starting with ### 🌀)
-        existing_entries = re.findall(r"### 🌀 \[([^\]]+)\]", content)
-        entry_names = {name.lower() for name in existing_entries}
+        # Identify existing entries (headers starting with ### 🌀 or table entries)
+        existing_entries = re.findall(r"### 🌀 \[([^\\]]+)\]", content)
+        table_entries = re.findall(r"\|\| ([^|]+) \|", content)
+        entry_names = {name.lower() for name in (existing_entries + table_entries)}
 
         # Extract all mentioned entities from the entire document
         all_entities = self._extract_entities(content)
