@@ -1,27 +1,31 @@
-# 🛡️ Certified Reasoning Trajectories (CRT)
+# 🛡️ Knowledge Artifact: Certified Reasoning Trajectories (CRT)
+**Status**: $\text{Integrated}$
+**Classification**: $\text{Formal Verification / RLVR / Reasoning-Scaling}$
+**Signal-to-Noise Ratio (SNR)**: $\text{Elite}$
 
-## 📌 Overview
-$\text{Certified Reasoning Trajectories (CRT)}$ operationalizes the bridge between stochastic LLM reasoning (Chain-of-Thought) and deterministic formal verification. While standard RLVR (Reinforcement Learning with Verifiable Rewards) provides a binary signal on the final answer, $\text{CRT}$ focuses on the **verifiability of the intermediate trajectory**.
+## 1. Executive Summary
+Certified Reasoning Trajectories ($\text{CRT}$) bridge the gap between stochastic LLM reasoning (Chain-of-Thought) and deterministic formal verification. While standard $\text{RLVR}$ (Reinforcement Learning from Verifiable Rewards) provides binary signals on final answers, $\text{CRT}$ ensures the **verifiability of the intermediate trajectory**.
 
-## 📐 Architectural Depth
-The core thesis of $\text{CRT}$ is that a reasoning trajectory is "certified" if every step $s_i \rightarrow s_{i+1}$ can be mapped to a formal proof obligation in a system like $\text{Lean 4}$ or $\text{Coq}$.
+## 2. Technical Framework
+A trajectory is "certified" if every step $s_i \rightarrow s_{i+1}$ can be mapped to a formal proof obligation in a trusted kernel (e.g., Lean 4, Coq).
 
-### 1. The Certification Pipeline
+### 2.1 The Certification Pipeline
 $$\text{Trajectory} \xrightarrow{\text{Formalizer}} \text{Proof Script} \xrightarrow{\text{Kernel}} \text{Certificate}$$
 
-- **Step-Level Formalization**: Instead of formalizing the final result, the agent generates a parallel "proof trace" where each natural language claim is paired with a formal tactic.
-- **Kernel Verification**: The formal proof script is executed by a trusted kernel (e.g., Lean 4). If the kernel accepts the script, the entire trajectory is certified.
-- **Trajectory Scaling Laws**: Preliminary analysis suggests that the probability of certification $P(\text{Cert})$ scales with the budget of test-time compute $\text{TTC}$ following a power law: $P(\text{Cert}) \propto \text{TTC}^\alpha$.
+- **Step-Level Formalization**: The agent generates a parallel proof trace where natural language claims are paired with formal tactics.
+- **Kernel Verification**: The trusted kernel executes the script. A successful execution yields a certificate of correctness for the entire trajectory.
 
-### 2. Integration with RLVR
-$\text{CRT}$ enhances $\text{RLVR}$ by replacing the sparse reward (final answer) with a dense, structured reward based on the percentage of certified steps:
+### 2.2 Reward Structuring
+$\text{CRT}$ transforms sparse outcome rewards into dense, structured rewards:
 $$\text{Reward}_{\text{CRT}} = \sum_{i=1}^{N} \omega_i \cdot \mathbb{I}(\text{Step}_i \text{ is certified})$$
-where $\omega_i$ is the weight of the step's contribution to the overall proof.
+where $\omega_i$ represents the relative weight of step $i$'s contribution to the total proof.
 
-## 🚀 Impact on Agentic Flywheels
-- **Zero-Hallucination Reasoning**: By requiring a formal certificate for every trajectory, the system eliminates the possibility of "lucky" correct answers via incorrect reasoning.
-- **High-Fidelity Synthesis**: Certified trajectories can be distilled into SFT datasets, ensuring that the model learns the *correct* reasoning paths rather than just the *correct* answers.
-- **Formal-to-Natural Bridge**: Provides a mechanism for LLMs to "explain" formal proofs in natural language while maintaining absolute correctness.
+## 3. Impact on the Flywheel
+- **Zero-Hallucination**: Eliminates "lucky" correct answers by requiring formal proof for every intermediate step.
+- **High-Fidelity Distillation**: Certified trajectories serve as gold-standard SFT data, ensuring the model learns correct *paths*, not just correct *outcomes*.
+- **TTC Scaling**: The probability of certification $P(\text{Cert})$ follows a power law relative to test-time compute: $P(\text{Cert}) \propto \text{TTC}^\alpha$.
 
-**Reference**: Synthesized from $\text{LeetProof}$ (arXiv:2604.16584) and general $\text{RLVR}$ principles.
-**Category**: Certified Synthesis / Formal Verification / RLVR / Reasoning-Scaling
+**References**:
+- Synthesized from $\text{LeetProof}$ (arXiv:2604.16584).
+- $\text{RLVR}$ principles.
+**, Category**: Certified Synthesis / Formal Verification / RLVR / Reasoning-Scaling
